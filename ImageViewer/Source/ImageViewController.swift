@@ -18,7 +18,11 @@ final class ImageViewController: UIViewController, UIScrollViewDelegate, UIGestu
     
     /// UI
     private let scrollView = UIScrollView()
-    private let imageView = UIImageView()
+    public var imageView = UIImageView() {
+      didSet {
+        configureImageView()
+      }
+    }
     let blackOverlayView = UIView()
     private let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .White)
     var applicationWindow: UIWindow? {
